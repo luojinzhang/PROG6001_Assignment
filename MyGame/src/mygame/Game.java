@@ -17,6 +17,20 @@ import java.util.HashMap;
 
 public class Game {
 
+    /**
+     * @return the currentRoom
+     */
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+    /**
+     * @param currentRoom the currentRoom to set
+     */
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
     private Parser parser;
     private Player player;
     private Room currentRoom;
@@ -69,7 +83,12 @@ public class Game {
         System.out.println("objective here");
         System.out.println("include some necessary information (e.g. time limit)");
         System.out.println();
-        System.out.println(currentRoom.getLongDescription());
+        System.out.println(getCurrentRoom().getLongDescription());
+    }
+    
+    public void testProcessCommand(Command c)
+    {
+        processCommand(c);
     }
 
     /**
@@ -144,17 +163,17 @@ public class Game {
         String direction = command.getSecondWord();
 
         // Try to leave current room.
-        Room nextRoom = currentRoom.getExit(direction);
+        Room nextRoom = getCurrentRoom().getExit(direction);
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
         } else {
-            if (currentRoom.getLockedStatus() == true) { // the door is locked
+            if (getCurrentRoom().getLockedStatus() == true) { // the door is locked
                 System.out.println("The door is locked, you need to find a way to open it");
-                System.out.println(currentRoom.getLongDescription());
+                System.out.println(getCurrentRoom().getLongDescription());
             } else {
-                currentRoom = nextRoom;
-                System.out.println(currentRoom.getLongDescription());
+                setCurrentRoom(nextRoom);
+                System.out.println(getCurrentRoom().getLongDescription());
                 //System.out.println(currentRoom.printAllRoomItems());
                 // increment the timeCounter
             }
@@ -169,14 +188,14 @@ public class Game {
         }
 
         String itemFromCommand = command.getSecondWord();
-        Item currentItem = currentRoom.getRoomItem(itemFromCommand);
+        Item currentItem = getCurrentRoom().getRoomItem(itemFromCommand);
         //getPlayerItem(itemFromCommand);
 
         if (currentItem == null) {
             System.out.println("You can't take nothing, no?");
         } else {
             // Do the transaction here
-            currentRoom.removeItemInRoom(currentItem);
+            getCurrentRoom().removeItemInRoom(currentItem);
             player.addItemInventory(currentItem);
 
             //roomItem.remove(currentItem);
@@ -201,7 +220,7 @@ public class Game {
         } else {
             // Do the transaction here
             player.removeItemInventory(currentItem);
-            currentRoom.addItemInRoom(currentItem);
+            getCurrentRoom().addItemInRoom(currentItem);
 
             //removeItemInventory(currentItem);
             //roomItem.put(currentItem, currentRoom);
@@ -218,7 +237,7 @@ public class Game {
         }
 
         String itemFromCommand = command.getSecondWord();
-        Item currentItem = currentRoom.getRoomItem(itemFromCommand);
+        Item currentItem = getCurrentRoom().getRoomItem(itemFromCommand);
 
         if (currentItem == null) {
             System.out.println("You can't use nothing, no?");
