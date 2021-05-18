@@ -1,5 +1,5 @@
 
-package mygame;
+package ass3.mygame;
 /**
  * 
  *
