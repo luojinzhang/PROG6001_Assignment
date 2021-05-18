@@ -17,7 +17,7 @@
  * @version 2016.02.29
  */
 
-package mygame;
+package ass3.mygame;
 
 public class Command
 {

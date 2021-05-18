@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mygame;
+package ass3.mygame;
 
 
 import java.util.ArrayList;
@@ -12,24 +12,10 @@ import java.util.HashMap;
 /**
  *
  *
- * @author @version
+ 
  */
 
 public class Game {
-
-    /**
-     * @return the currentRoom
-     */
-    public Room getCurrentRoom() {
-        return currentRoom;
-    }
-
-    /**
-     * @param currentRoom the currentRoom to set
-     */
-    public void setCurrentRoom(Room currentRoom) {
-        this.currentRoom = currentRoom;
-    }
 
     private Parser parser;
     private Player player;
@@ -53,6 +39,10 @@ public class Game {
         rooms = new RoomCreation();
         currentRoom = rooms.getRoom("castle");  // start game outside
         //System.out.println(createRoom.getcurrentRoom().getName());
+    }
+    
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     
@@ -83,12 +73,7 @@ public class Game {
         System.out.println("objective here");
         System.out.println("include some necessary information (e.g. time limit)");
         System.out.println();
-        System.out.println(getCurrentRoom().getLongDescription());
-    }
-    
-    public void testProcessCommand(Command c)
-    {
-        processCommand(c);
+        System.out.println(currentRoom.getLongDescription());
     }
 
     /**
@@ -97,7 +82,7 @@ public class Game {
      * @param command The command to be processed.
      * @return true If the command ends the game, false otherwise.
      */
-    private boolean processCommand(Command command) {
+    public boolean processCommand(Command command) {
         boolean wantToQuit = false;
 
         if (command.isUnknown()) {
@@ -163,17 +148,17 @@ public class Game {
         String direction = command.getSecondWord();
 
         // Try to leave current room.
-        Room nextRoom = getCurrentRoom().getExit(direction);
+        Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
         } else {
-            if (getCurrentRoom().getLockedStatus() == true) { // the door is locked
+            if (currentRoom.getLockedStatus() == true) { // the door is locked
                 System.out.println("The door is locked, you need to find a way to open it");
-                System.out.println(getCurrentRoom().getLongDescription());
+                System.out.println(currentRoom.getLongDescription());
             } else {
-                setCurrentRoom(nextRoom);
-                System.out.println(getCurrentRoom().getLongDescription());
+                currentRoom = nextRoom;
+                System.out.println(currentRoom.getLongDescription());
                 //System.out.println(currentRoom.printAllRoomItems());
                 // increment the timeCounter
             }
@@ -188,14 +173,14 @@ public class Game {
         }
 
         String itemFromCommand = command.getSecondWord();
-        Item currentItem = getCurrentRoom().getRoomItem(itemFromCommand);
+        Item currentItem = currentRoom.getRoomItem(itemFromCommand);
         //getPlayerItem(itemFromCommand);
 
         if (currentItem == null) {
             System.out.println("You can't take nothing, no?");
         } else {
             // Do the transaction here
-            getCurrentRoom().removeItemInRoom(currentItem);
+            currentRoom.removeItemInRoom(currentItem);
             player.addItemInventory(currentItem);
 
             //roomItem.remove(currentItem);
@@ -220,7 +205,7 @@ public class Game {
         } else {
             // Do the transaction here
             player.removeItemInventory(currentItem);
-            getCurrentRoom().addItemInRoom(currentItem);
+            currentRoom.addItemInRoom(currentItem);
 
             //removeItemInventory(currentItem);
             //roomItem.put(currentItem, currentRoom);
@@ -237,7 +222,7 @@ public class Game {
         }
 
         String itemFromCommand = command.getSecondWord();
-        Item currentItem = getCurrentRoom().getRoomItem(itemFromCommand);
+        Item currentItem = currentRoom.getRoomItem(itemFromCommand);
 
         if (currentItem == null) {
             System.out.println("You can't use nothing, no?");
