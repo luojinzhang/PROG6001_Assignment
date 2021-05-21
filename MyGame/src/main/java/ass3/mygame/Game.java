@@ -107,6 +107,8 @@ public class Game {
             //lookItem(command);
         } else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
+        } else if (commandWord.equals("unlock")) {
+           unlockRoom(command);
         }
         // else command not recognised.
         return wantToQuit;
@@ -258,6 +260,39 @@ public class Game {
             return false;
         } else {
             return true;  // signal that we want to quit
+        }
+    }
+    /**
+     * The unlock room function 
+     * @param command Instance of Command class which is a string provided by user as input
+     * @see Command
+     */
+    private void unlockRoom(Command command)
+    {
+        if (!command.hasSecondWord()) {
+            System.out.println("Unlock what ?");
+            return;
+        }
+        
+        String roomFromSecondWord = command.getSecondWord();
+        String curRoomName = currentRoom.getName();
+        
+        if (!currentRoom.getLockedStatus())
+        {
+            System.out.println("The " + curRoomName + " is not locked");
+        }
+        else if (curRoomName.equals(roomFromSecondWord))
+        {
+            if (player.getPlayerItem("key") != null)
+            {
+                currentRoom.setLockedStatus(false);
+                System.out.println("The " + curRoomName + " is unlocked");
+            }
+            else
+            {
+                System.out.println("You need the key to unlock");
+            }
+           
         }
     }
 
