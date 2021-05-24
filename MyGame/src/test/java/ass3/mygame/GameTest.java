@@ -40,14 +40,14 @@ public class GameTest {
     /**
      * Test of getCurrentRoom method, of class Game.
      */
-    @Test
-    public void testGetCurrentRoom() {
-        System.out.println("getCurrentRoom");
-        Game instance = new Game();
-        String expResult = "castle";
-        Room result = instance.getCurrentRoom();
-        assertEquals(expResult, result.getName());
-    }
+//    @Test
+//    public void testGetCurrentRoom() {
+//        System.out.println("getCurrentRoom");
+//        Game instance = new Game();
+//        String expResult = "castle";
+//        Room result = instance.getCurrentRoom();
+//        assertEquals(expResult, result.getName());
+//    }
 
     /**
      * Test of play method, of class Game.
@@ -62,11 +62,11 @@ public class GameTest {
  //   }
 
     /**
-     * Test of processCommand method, of class Game.
+     * Test treasure room logic
      */
     @Test
     public void testGoToTreasureRoom() {
-        System.out.println("processCommand");
+        System.out.println("testGoToTreasureRoom");
         Command command = new Command("go", "west");
         Game instance = new Game();
         String expResult = "treasureRoom";
@@ -75,4 +75,26 @@ public class GameTest {
         assertEquals(expResult,result);
     }
     
+    /**
+     * Test unlock room logic
+     */
+    @Test
+    public void testUnlockRoom()
+    {
+        System.out.println("testUnlockRoom");
+        
+        Game instance = new Game();
+        
+        var takeKeyCommand = new Command("take", "key");
+        instance.processCommand(takeKeyCommand);
+        var goSouthCommand = new Command("go", "south");
+        instance.processCommand(goSouthCommand);
+        var unlockCommand = new Command("unlock", "frontGate");
+        instance.processCommand(unlockCommand);
+        
+        var result = instance.getCurrentRoom().getLockedStatus();
+        var expResult = false;
+        
+        assertEquals(expResult,result);
+    }
 }
