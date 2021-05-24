@@ -18,41 +18,52 @@ public class ItemTest {
     public ItemTest() {
         item = new Item("gun","this is a gun", 0);
     }
+    
+    /**
+     * Test case for armor logic
+     */
+    @Test
+    public void testArmor() {
+        String expResult = (new Item("armor","The armor made by finest material", 0)).getName();
+        ItemCreation list = new ItemCreation();
+        String result = list.getItem("armor").getName();
+        assertEquals(expResult, result);
+    }
 
     /**
      * Test of getName method, of class Item.
      */
-    @Test
-    public void testGetName() {
-        
-        //Item item = new Item("gun","this is a gun", 0);
-        String expected = "gun";
-        //String expected = "guns";     // failed test
-        String actual = item.getName();
-        
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void testGetName() {
+//        
+//        //Item item = new Item("gun","this is a gun", 0);
+//        String expected = "gun";
+//        //String expected = "guns";     // failed test
+//        String actual = item.getName();
+//        
+//        assertEquals(expected, actual);
+//    }
 
     
 
     /**
      * Test of getPower method, of class Item.
      */
-    @Test
-    public void testGetPower() {
-        //Item item = new Item("gun","this is a gun", 0);
-        int expected = 0;
-        int actual = item.getPower();
-        
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void testGetPower() {
+//        //Item item = new Item("gun","this is a gun", 0);
+//        int expected = 0;
+//        int actual = item.getPower();
+//        
+//        assertEquals(expected, actual);
+//    }
 
     /**
      * Test of getDescription method, of class Item.
      */
-    @Test
-    public void testGetDescription() {
-        assertEquals(0, 0);
-    }
-  
+//    @Test
+//    public void testGetDescription() {
+//        assertEquals(0, 0);
+//    }
+//  
 }
