@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 /**
- * The Room class contains information about the room. 
- * It has name, description, lock status, list of items. 
- * Please see {@link RoomCreation} for list of rooms. 
- * @author  Cam Chuong Lac, Margi Patel
- * @version 1
+ * Write at least 3 sentences!!!!!
+ * 
+ * @author  Michael Kölling and David J. Barnes
+ * @version 2016.02.29
  */
 
 public class Room 
@@ -19,15 +18,13 @@ public class Room
     private boolean isLocked;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private ArrayList<Item> roomItem;
-//    private HashMap<Room, Item> roomHashMapItem;
+    private HashMap<Room, Item> roomHashMapItem;
 
     /**
-     * Create a room described "description".Initially, it has
- no exits."description" is something like "a kitchen" or
- "an open court yard".
-     * @param name The name of the room.
+     * Create a room described "description". Initially, it has
+     * no exits. "description" is something like "a kitchen" or
+     * "an open court yard".
      * @param description The room's description.
-     * @param isLocked the lock status of the room.
      */
     public Room(String name, String description, boolean isLocked) 
     {
@@ -49,7 +46,6 @@ public class Room
     }
 
     /**
-     * Method to get description of the item.
      * @return The short description of the room
      * (the one that was defined in the constructor).
      */
@@ -69,20 +65,12 @@ public class Room
         return "You are at the " + name + ".\n" + description + ".\n" + getExitString() + ".\n" + getAllItems();
     }
 
-    /**
-     * Method to get all items name using {@link #listOfItems() listOfItems()}
-     * @return A string contains all items in room
-     */
     public String getAllItems(){
 
         return "You have some " + listOfItems();
 
     }
 
-    /**
-     * Method to list all items name
-     * @return A string which contains all items name
-     */
     private String listOfItems(){
 
         String returnString = "items:";
@@ -134,48 +122,34 @@ public class Room
         return itemToReturn;
     }
 
-    /**
-     * Method to add item into room
-     * @param item The {@link Item} that needs to be added
-     */
     public void addItemInRoom(Item item){
         roomItem.add(item);
     }
 
-    /**
-     * Method to remove item from room
-     * @param item The {@link Item} that needs to be removed
-     */
     public void removeItemInRoom(Item item){
         if(roomItem.size() > 0){
             roomItem.remove(item);
         }
     }
 
-//    public void addHashMapItemInRoom(Room room, Item item){
-//        roomHashMapItem.put(room, item);
-//    }
+    public void addHashMapItemInRoom(Room room, Item item){
+        roomHashMapItem.put(room, item);
+    }
 
     /**
      * Method getLockedStatus
-     * @return True if the room is locked, otherwise false
+     *
+     * @return The return value
      */
+
     public boolean getLockedStatus(){
         return isLocked;
     }
 
-    /**
-     * Method to set the value for lock status
-     * @param newStatus The new status for the room, true is locked and false is unlocked
-     */
     public void setLockedStatus(boolean newStatus){
         isLocked = newStatus;
     }
     
-    /**
-     * Method to get name of the room
-     * @return A string which represents the name of room
-     */
     public String getName(){
         return name;
     }

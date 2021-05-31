@@ -18,11 +18,7 @@
  */
 
 package ass3.mygame;
-/**
- * The Command class is a combination of two strings
- * @author Cam Chuong Lac, Margi Patel
- * @version 1.0
- */
+
 public class Command
 {
     private String commandWord;
