@@ -9,11 +9,7 @@
  * @version 2016.02.29
  */
 package ass3.mygame;
-/**
- * List of valid commands
- * @author Cam Chuong Lac, Margi Patel
- * @version 1.0
- */
+
 public class CommandWords
 {
     // a constant array that holds all valid command words
@@ -32,7 +28,6 @@ public class CommandWords
 
     /**
      * Check whether a given String is a valid command word. 
-     * @param aString The command word string
      * @return true if it is, false if it isn't.
      */
     public boolean isCommand(String aString)
