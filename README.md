@@ -1,6 +1,10 @@
 # PROG6001_Assignment3
+Version 3.1:<br />
+  +Added testArmor<br />
+  +Added testUnlockRoom<br />
 Version 3.0:<br />
   +Added new command: "unlock" + room name<br />
+  +Added testGoToTreasureRoom<br />
   +Added GameTest.java<br />
 Version 2.1:<br />
   *Updated project with Maven<br />
