@@ -1,4 +1,7 @@
 # PROG6001_Assignment3
+Version 4.0: <br />
+  +Added javadoc<br />
+  -Comment unused codes<br />
 Version 3.1:<br />
   +Added testArmor<br />
   +Added testUnlockRoom<br />
