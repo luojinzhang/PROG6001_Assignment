@@ -3,7 +3,7 @@ package ass3.mygame;
 /**
  * The Item class contains information about the item
  * @author Cam Chuong Lac
- * @version 1.0
+ * @version 5.0
  */
 public class Item
 {
@@ -12,7 +12,7 @@ public class Item
     private int destructivePower;
     private double healingPower;
     /**
-     * Constructor of Item class
+     * Constructor of Item class. Create an item using the parameters.
      * @param name A String represents the name of item
      * @param description A String with information about description of item
      * @param destructivePower An Integer represents the destructive power of item
@@ -25,7 +25,7 @@ public class Item
     }
     
     /**
-     * Constructor of Item class
+     * Constructor of Item class. Create an item using the parameters.
      * @param name A String represents the name of item
      * @param description A String with information about description of item
      * @param healingPower A Double represents the healing power of item
@@ -38,23 +38,23 @@ public class Item
     }
     
     /**
-     * The method getName
-     * @return the name of item
+     * The method getName.
+     * @return the name of item.
      */
     public String getName(){
         return name;
     }
     /**
-     * the method getDescription
-     * @return the description of item
+     * The method getDescription.
+     * @return the description of item.
      */
     public String getDescription(){
         return description;
     }
     
     /**
-     * The method getPower
-     * @return the destructive power of item
+     * The method getPower.
+     * @return the destructive power of item in int.
      */
     public int getPower(){
         return destructivePower;

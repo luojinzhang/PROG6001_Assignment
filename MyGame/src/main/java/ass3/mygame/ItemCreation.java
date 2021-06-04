@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 
 /**
- * The ItemCreation class uses to create all items in game 
- * and contains them in an ArrayList of Item
+ * The ItemCreation class creates all items in game 
+ * and stores them in an ArrayList of Item
  * @author Cam Chuong, Margi Patel
- * @version 1.0
+ * @version 5.0
  * @see ArrayList
  */
 public class ItemCreation
@@ -32,14 +32,15 @@ public class ItemCreation
      */
     public void createItems(){
         
-        Item item1, item2, excaliburSword, key, frontGateKey, armor;
+        Item excaliburSword, key, frontGateKey, armor;
         
-        
+        // Initialise the items
         excaliburSword = new Item("excaliburSword", "The legendary Excalibur", 100);
         key = new Item("key", "It has a shape of a heart", 100);
         frontGateKey = new Item("frontGateKey", "To open the front gate door", 100);
         armor = new Item("armor","The armor made by finest material", 0);
         
+        // Add items into ArrayList
         allItemsInGame.add(excaliburSword);
         allItemsInGame.add(key);
         allItemsInGame.add(frontGateKey);
@@ -48,7 +49,7 @@ public class ItemCreation
    
     /**
      * Method to get item
-     * @param stringItem Name of the item that needs to find
+     * @param stringItem Name of the item that needs to get
      * @return the item
      * @see Item
      */
