@@ -1,4 +1,10 @@
 # PROG6001_Assignment3
+Version 5.0: <br />
+  *Edited the printWelcome method content <br />
+  *Moved key from castle to frontGate <br />
+  *Edited the help instruction <br />
+  *Edited the description when take item <br />
+  *Edited for items in rooms <br />
 Version 4.0: <br />
   +Added javadoc<br />
   -Comment unused codes<br />
