@@ -19,9 +19,9 @@
 
 package ass3.mygame;
 /**
- * The Command class is a combination of two strings
+ * The Command class is a combination of two strings.
  * @author Cam Chuong Lac, Margi Patel
- * @version 1.0
+ * @version 5.0
  */
 public class Command
 {
@@ -29,6 +29,7 @@ public class Command
     private String secondWord;
 
     /**
+     * Constructor of Command class. 
      * Create a command object. First and second word must be supplied, but
      * either one (or both) can be null.
      * @param firstWord The first word of the command. Null if the command
@@ -52,6 +53,8 @@ public class Command
     }
 
     /**
+     * Return the second command word of this command. If the command was not
+     * understood, the result is null.
      * @return The second word of this command. Returns null if there was no
      * second word.
      */
@@ -61,6 +64,7 @@ public class Command
     }
 
     /**
+     * Return the validity of the commandWord.
      * @return true if this command was not understood.
      */
     public boolean isUnknown()
@@ -69,6 +73,7 @@ public class Command
     }
 
     /**
+     * Return the presence of the second command word.
      * @return true if the command has a second word.
      */
     public boolean hasSecondWord()

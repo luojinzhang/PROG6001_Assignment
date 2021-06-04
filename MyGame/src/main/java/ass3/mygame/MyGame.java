@@ -5,7 +5,7 @@ package ass3.mygame;
 /**
  * The game starts here, the main method is in this class. 
  * @author Cam Chuong Lac, Margi Patel
- * @version 1.0
+ * @version 5.0
  */
 
 

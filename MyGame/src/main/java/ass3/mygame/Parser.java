@@ -1,7 +1,3 @@
-package ass3.mygame;
-
-import java.util.Scanner;
-
 /**
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
@@ -17,6 +13,15 @@ import java.util.Scanner;
  * 
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
+ */
+package ass3.mygame;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * @author Cam Chuong Lac, Margi Patel
+ * @version 5.0
  */
 public class Parser 
 {

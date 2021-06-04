@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 
 /**
- * The Player class stores information about the player, including items
- * @author (your name)
- * @version (a version number or a date)
+ * The Player class stores information about the player, including items in inventory.
+ * @author Cam Chuong Lac, Margi Patel
+ * @version 5.0
  * @see Item
  */
 public class Player
@@ -29,7 +29,8 @@ public class Player
      */
     public void addItemInventory(Item item){
         playerItem.add(item);
-        System.out.println(item.getDescription() + " was taken ");
+        System.out.println(item.getName() + " was taken. ");
+        System.out.println(item.getDescription());
     }
     
     /**
@@ -42,9 +43,9 @@ public class Player
     }
     
     /**
-     * The method to get item from player's inventory
-     * @param stringItem the name of the item that need to be returned
-     * @return the item that has the same name from inventory
+     * The method to get item from player's inventory.
+     * @param stringItem the name of the item that need to be returned.
+     * @return the item that has been requested.
      */
     public Item getPlayerItem(String stringItem){
         Item itemToReturn = null;

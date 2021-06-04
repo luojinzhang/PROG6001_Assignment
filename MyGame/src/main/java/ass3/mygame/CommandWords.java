@@ -10,9 +10,9 @@
  */
 package ass3.mygame;
 /**
- * List of valid commands
+ * List of valid command words.
  * @author Cam Chuong Lac, Margi Patel
- * @version 1.0
+ * @version 5.0
  */
 public class CommandWords
 {
@@ -23,7 +23,7 @@ public class CommandWords
     };
 
     /**
-     * Constructor - initialise the command words.
+     * Constructor of CommandWords class.
      */
     public CommandWords()
     {
@@ -32,7 +32,7 @@ public class CommandWords
 
     /**
      * Check whether a given String is a valid command word. 
-     * @param aString The command word string
+     * @param aString The command word string.
      * @return true if it is, false if it isn't.
      */
     public boolean isCommand(String aString)

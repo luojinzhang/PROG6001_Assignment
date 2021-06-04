@@ -13,8 +13,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
- * @author USER
+ * Game test class to test Game class.
+ * @author  Cam Chuong Lac, Margi Patel
+ * @version 5.0
  */
 public class GameTest {
     
@@ -38,63 +39,59 @@ public class GameTest {
     }
 
     /**
-     * Test of getCurrentRoom method, of class Game.
-     */
-//    @Test
-//    public void testGetCurrentRoom() {
-//        System.out.println("getCurrentRoom");
-//        Game instance = new Game();
-//        String expResult = "castle";
-//        Room result = instance.getCurrentRoom();
-//        assertEquals(expResult, result.getName());
-//    }
-
-    /**
-     * Test of play method, of class Game.
-     */
-  //  @Test
- //   public void testPlay() {
-//        System.out.println("play");
-//        Game instance = new Game();
-//        instance.play();
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
- //   }
-
-    /**
-     * Test treasure room logic
+     * Test treasure room logic. 
      */
     @Test
     public void testGoToTreasureRoom() {
         System.out.println("testGoToTreasureRoom");
-        Command command = new Command("go", "west");
-        Game instance = new Game();
         String expResult = "treasureRoom";
+        
+        //Create a command to go west. 
+        Command command = new Command("go", "west");
+        
+        //Create game instance.
+        Game instance = new Game();
+        
+        //Run process command to proceed the game.
         instance.processCommand(command);
+        
+        //Get the name of the current room.
         String result = instance.getCurrentRoom().getName();
-        assertEquals(expResult,result);
+        
+        //Compare the result with expected result.
+        assertEquals(expResult, result);
     }
     
     /**
-     * Test unlock room logic
+     * Test unlock room logic.
      */
     @Test
     public void testUnlockRoom()
     {
         System.out.println("testUnlockRoom");
-        
+        var expResult = false;
+       
+         //Create game instance.
         Game instance = new Game();
         
+        //Create the command take key.
         var takeKeyCommand = new Command("take", "key");
-        instance.processCommand(takeKeyCommand);
+       
+        //Create the command go south.
         var goSouthCommand = new Command("go", "south");
-        instance.processCommand(goSouthCommand);
+        
+        //Create the command unlock frontGate.
         var unlockCommand = new Command("unlock", "frontGate");
+        
+        //Run processCommand to proceed the game.
+        instance.processCommand(takeKeyCommand);
+        instance.processCommand(goSouthCommand);
         instance.processCommand(unlockCommand);
         
+        //Get the lock status of the current room.
         var result = instance.getCurrentRoom().getLockedStatus();
-        var expResult = false;
         
-        assertEquals(expResult,result);
+        //Compare the result with expected result.
+        assertEquals(expResult, result);
     }
 }
