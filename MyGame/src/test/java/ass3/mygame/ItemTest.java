@@ -9,8 +9,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
- * @author Nigel Franciscus
+ * ItemTest class to test Item class.
+ * @author  Cam Chuong Lac, Margi Patel
+ * @version 5.0
  */
 public class ItemTest {
     Item item;
@@ -20,50 +21,21 @@ public class ItemTest {
     }
     
     /**
-     * Test case for armor logic
+     * Test case for armor logic.
      */
     @Test
     public void testArmor() {
+        // Create the armor as expected result.
         String expResult = (new Item("armor","The armor made by finest material", 0)).getName();
+        
+        // Create an instance of ItemCreation.
         ItemCreation list = new ItemCreation();
+        
+        // Get the name of the armor from item list.
         String result = list.getItem("armor").getName();
+        
+        // Compare the result with expected result
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of getName method, of class Item.
-     */
-//    @Test
-//    public void testGetName() {
-//        
-//        //Item item = new Item("gun","this is a gun", 0);
-//        String expected = "gun";
-//        //String expected = "guns";     // failed test
-//        String actual = item.getName();
-//        
-//        assertEquals(expected, actual);
-//    }
-
-    
-
-    /**
-     * Test of getPower method, of class Item.
-     */
-//    @Test
-//    public void testGetPower() {
-//        //Item item = new Item("gun","this is a gun", 0);
-//        int expected = 0;
-//        int actual = item.getPower();
-//        
-//        assertEquals(expected, actual);
-//    }
-
-    /**
-     * Test of getDescription method, of class Item.
-     */
-//    @Test
-//    public void testGetDescription() {
-//        assertEquals(0, 0);
-//    }
-//  
 }
