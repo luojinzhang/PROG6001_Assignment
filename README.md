@@ -1,4 +1,7 @@
 # PROG6001_Assignment3
+
+Version 5.1: <br />
+  *Fix error from testUnlockRoom: key was moved to frontGate => action take key needs to happen after action go south <br />
 Version 5.0: <br />
   *Edited the printWelcome method content <br />
   *Moved key from castle to frontGate <br />
