@@ -84,8 +84,8 @@ public class GameTest {
         var unlockCommand = new Command("unlock", "frontGate");
         
         //Run processCommand to proceed the game.
-        instance.processCommand(takeKeyCommand);
         instance.processCommand(goSouthCommand);
+        instance.processCommand(takeKeyCommand);
         instance.processCommand(unlockCommand);
         
         //Get the lock status of the current room.
